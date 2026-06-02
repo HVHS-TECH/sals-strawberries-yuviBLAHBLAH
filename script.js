@@ -1,4 +1,4 @@
-
+const HTML_OUTPUT = document.getElementById('statusMessage')
 console.log("Running Sal's Strawberries")
 
 function writeForm() {
@@ -57,4 +57,16 @@ function makeDude() {
     firebase.database().ref('/sector1/consumers/' + user).set(
         score
     );
+}
+
+function email(){
+let  = GLOBAL_user.uid
+firebase.database().ref('/' + uid).once('value', displayEmail)
+}
+
+function displayEmail(){
+const favoriteFruit = document.getElementById("favoriteFruit").value;
+const name = document.getElementById("name").value;
+const fruitQuantity = document.getElementById("fruitQuantity").value;
+HTML_OUTPUT.innerHTML = "yello " + name + " your fav fruit is " + favoriteFruit + " and you eat " + fruitQuantity +" per week."
 }
